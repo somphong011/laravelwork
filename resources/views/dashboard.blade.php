@@ -1,0 +1,9 @@
+<x-app-layout>
+    @if(auth()->user()->isAdmin())
+        @include('dashboards.admin')
+    @elseif(auth()->user()->isTradesman())
+        @include('dashboards.tradesman')
+    @else
+        @include('dashboards.user')
+    @endif
+</x-app-layout>
